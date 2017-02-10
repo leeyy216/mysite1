@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>自强学堂</title>
+</head>
+<body>
+
+	<!-- {{ string }} -->
+	
+	<!-- 教程列表：
+	{% for i in TutorialList %}
+	{{ i }}
+	{% endfor %} -->
+	
+	<!-- 站点：{{ info_dict.site }}
+	内容：{{ info_dict.content }} -->
+
+	<!--<a href = "{{ request.path }}?{{ request.GET.urlencode }}&delete=1">this path and parameter'delete':</a>-->
+
+	{% for item in List %}
+		{{ item }}{% if not forloop.last %},{% endif %}
+		{% empty %}
+			<li>sorry,the list is empty</li>
+		{% if item >= 90 %}
+		perfect
+		{% elif item >= 80 %}
+		great
+		{% elif item >= 70 %}
+		good
+		{% elif item >= 60 %}
+		bad
+		{% else}
+		miss
+		{% endif %}
+	{% endfor %}
+
+	<!--<a href = "/add/4/5">计算4+5</a>-->
+	<!--<a href="{% url 'add2' 4 5 %}">calculate 4+5</a>-->
+	<!--想要改网址的时候，修改 urls.py中的
+	正则表达式部分（url 参数第一部分），
+	name 不变的前提下，其它地方都不需要修改。
+	指的是calculate 4+5链接指向的url会自动渲染为
+	该name：add2带上所给参数4,5后对应的新url-->
+	{% url 'add2' 4 5 as add45 %}
+	<a href="{{ add45 }}">link to : {{ add45 }}</a>
+	<!--使用 as 语句将内容取别名（相当于定义一个变量）
+	多次使用（但视图名称到网址转换只进行了一次）-->
+
+
+</body>
+</html>

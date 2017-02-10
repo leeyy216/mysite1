@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>欢迎光临</title>
+</head>
+<body>
+	{% extends 'base1.html' %}
+	
+	{% block title %}欢迎光临首页{% endblock %}
+
+	{% block content %}
+	{% include 'ad.html' %}
+	这里是首页，欢迎光临
+	{% endblock %}
+
+	欢迎光临自强学堂
+</body>
+</html>

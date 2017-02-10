@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--网站模板的设计，一般的，我们做网站有一些通用的部分，比如 导航，底部，访问统计代码等等
+
+nav.html, bottom.html, tongji.html
+
+可以写一个 base.html 来包含这些通用文件（include)-->
+
+<html>
+<head>
+	<title>{% block title %}默认标题{% endblock %} - 自强学堂</title>
+</head>
+<body>
+
+	{% include 'nav.html' %}
+
+	{% block content %}
+	<div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
+	{% endblock %}
+
+	{% include 'bottom.html' %}
+
+	{% include 'tongji.html' %}
+
+</body>
+</html>
