@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--h5文档类型-->
+<link rel="stylesheet" type="text/css" href="/static/boot.css">
+<html>
+
+<head>
+
+<style type="text/css">
+.img-responsive{
+	display: inline-block;
+	height: auto;
+	max-width: 100%;
+}
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #333333;
+	background-color: #ffffff;
+}
+/*第一条规则设置 body 的默认字体样式为 "Helvetica Neue", Helvetica, Arial, sans-serif。
+
+第二条规则设置文本的默认字体大小为 14 像素。
+
+第三条规则设置默认的行高度为 1.428571429。
+
+第四条规则设置默认的文本颜色为 #333333。
+
+最后一条规则设置默认的背景颜色为白色*/
+.graphcenter{
+	margin-left: auto;
+	margin-right: auto;
+	width:  180px;	/*16:9=1920:1080*/;
+	height: 320px;
+}
+.wordcenter{
+	margin-right: auto;
+	margin-left: auto;
+	width: 70%;
+	font-size: 32px;
+
+}
+paiban{
+
+}
+
+a:link{color: #3d3b4f;}        /*正常，未访问过的链接*/
+a:visited{color: #b35c44;}     /*已访问过*/
+a:hover{color: #88ada6;}       /*鼠标悬停*/
+a:focus{
+	color: #2a6496;
+	text-decoration: underline;
+}
+/*当设置为若干链路状态的样式，也有一些顺序规则：
+a:hover 必须跟在 a:link 和 a:visited后面
+a:active 必须跟在 a:hover后面*/
+
+</style>
+
+</head>
+<meta name = "viewpoint" content = "width=device-width,initial-scale=1.0">
+<!--让 Bootstrap 开发的网站对移动设备友好，确保适当的绘制和触屏缩放
+在移动设备浏览器上，通过为 viewport meta 标签添加 user-scalable=no 可以禁用其缩放（zooming）功能,maximum-scale=1.0 与 user-scalable=no 一起使用-->
+<p class = "wordcenter">颜艺海SonodaUmi</p>
+<div class = "graphcenter">
+<img src="http://upload.shunwang.com/2014/0702/1404272353520.jpg?1.038859689142555" class="img-responsive" alt="响应式图像">
+<!--通过添加 img-responsive class 可以让 Bootstrap 3 中的图像对响应式布局的支持更友好。
+img-responsive class 为图像赋予了 max-width: 100%; 和 height: auto; 属性，可以让图像按比例缩放，不超过其父元素的尺寸。-->
+<a href="http:www.baidu.com">Come to search Umi~</a>
+</div>
+
+
+</html>

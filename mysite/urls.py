@@ -21,6 +21,12 @@ from learn import views as learn_views	#new
 from calc import views as calc_views	#new1
 from learn1 import views as learn1_views    #new0208
 
+from boot import views as boot_views    #new20170330
+
+from django.conf import settings    #0330
+from django.conf.urls.static import static
+
+
 #Django 查找模板的过程是在每个 app 的 templates 文件夹中找
 #（而不只是当前 app 中的代码只在当前的 app 的 templates 文件夹中找）
 
@@ -38,5 +44,8 @@ urlpatterns = [
     url(r'^home1/$', learn1_views.home1, name='home1'),    #new0208
     
     url(r'^admin/', admin.site.urls),
-]
+    url(r'^boot/',boot_views.bootindex,name='bootindex'),   #0330
+
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+
 []
